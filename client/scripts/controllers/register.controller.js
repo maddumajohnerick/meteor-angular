@@ -4,12 +4,6 @@ import { Accounts } from 'meteor/accounts-base';
 import { Controller } from 'angular-ecmascript/module-helpers';
  
 export default class RegisterCtrl extends Controller {
-  constructor() {
-    super(...arguments);
- 
-    this.subscribe('users');
-  }
-  
   register() {
     this.callMethod('registerUser', {
       username: this.email,
