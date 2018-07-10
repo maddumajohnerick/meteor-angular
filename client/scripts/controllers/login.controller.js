@@ -4,31 +4,19 @@ import { Controller } from 'angular-ecmascript/module-helpers';
  
 export default class LoginCtrl extends Controller {
   login() {
-    if (_.isEmpty(this.phone)) return;
- 
-    const confirmPopup = this.$ionicPopup.confirm({
-      title: 'Number confirmation',
-      template: '<div>' + this.phone + '</div><div>Is your phone number above correct?</div>',
-      cssClass: 'text-center',
-      okText: 'Yes',
-      okType: 'button-positive button-clear',
-      cancelText: 'edit',
-      cancelType: 'button-dark button-clear'
-    });
- 
-    confirmPopup.then((res) => {
-      if (!res) return;
- 
-      this.$ionicLoading.show({
-        template: 'Sending verification code...'
-      });
- 
-      Accounts.requestPhoneVerification(this.phone, (err) => {
-        this.$ionicLoading.hide();
-        if (err) return this.handleError(err);
-        this.$state.go('confirmation', { phone: this.phone });
-      });
-    });
+    Meteor.loginWithPassword(this.email, this.password, (err) => {
+      if(err){
+        this.handleError(err)
+      } else {
+        delete this.email;
+        delete this.password;
+        this.$state.go('tab.chats');
+      }
+    })
+  }
+  
+  register() {
+    this.$state.go('register');
   }
  
   handleError(err) {

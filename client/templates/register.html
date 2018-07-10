@@ -1,0 +1,21 @@
+<ion-view title="Register">
+  <ion-nav-buttons side="right">
+    <button ng-click="register.login()" class="button button-clear button-positive">Login</button>
+  </ion-nav-buttons>
+  <ion-content class="login">
+    <div class="text-center instructions">
+      Please fill in the following details
+    </div>
+    <div class="list">
+      <label class="item item-input">
+        <input ng-model="register.email" type="text" placeholder="Email Address">
+      </label>
+      <label class="item item-input">
+        <input ng-model="register.password" type="password" placeholder="Password">
+      </label>
+    </div>
+    <div class="padding text-center">
+      <button ng-click="register.register()" class="button button-clear button-positive">Register</button>
+    </div>
+  </ion-content>
+</ion-view>

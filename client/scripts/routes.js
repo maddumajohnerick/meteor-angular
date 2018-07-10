@@ -4,7 +4,7 @@ import { Config, Runner } from 'angular-ecmascript/module-helpers';
  
 import chatsTemplateUrl from '../templates/chats.html';
 import chatTemplateUrl from '../templates/chat.html';
-import confirmationTemplateUrl from '../templates/confirmation.html';
+import registerTemplateUrl from '../templates/register.html';
 import loginTemplateUrl from '../templates/login.html';
 import profileTemplateUrl from '../templates/profile.html';
 import settingsTemplateUrl from '../templates/settings.html';
@@ -48,15 +48,15 @@ class RoutesConfig extends Config {
           }
         }
       })
+      .state('register', {
+        url: '/register',
+        templateUrl: registerTemplateUrl,
+        controller: 'RegisterCtrl as register'
+      })
       .state('login', {
         url: '/login',
         templateUrl: loginTemplateUrl,
-        controller: 'LoginCtrl as logger'
-      })
-      .state('confirmation', {
-        url: '/confirmation/:phone',
-        templateUrl: confirmationTemplateUrl,
-        controller: 'ConfirmationCtrl as confirmation'
+        controller: 'LoginCtrl as login'
       })
       .state('profile', {
         url: '/profile',

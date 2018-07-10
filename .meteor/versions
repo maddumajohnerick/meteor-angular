@@ -1,4 +1,5 @@
 accounts-base@1.4.2
+accounts-password@1.5.1
 allow-deny@1.1.0
 angular-templates@1.0.3
 angular-templates-runtime@0.0.1
@@ -53,7 +54,6 @@ modules-runtime@0.10.0
 mongo@1.5.0
 mongo-dev-server@1.1.0
 mongo-id@1.0.7
-mys:accounts-phone@0.0.21
 npm-bcrypt@0.9.3
 npm-mongo@3.0.7
 ordered-dict@1.1.0
